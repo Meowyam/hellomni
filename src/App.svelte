@@ -1,4 +1,5 @@
 <script>
+  import Config from './Config.svelte';
 	export let name;
 </script>
 
@@ -8,4 +9,4 @@
 	}
 </style>
 
-<h1>Hello {name}!</h1>
+<Config/>
