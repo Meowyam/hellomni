@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "sirv-cli": "^0.4.4",
-    "svelte-awesome": "^2.2.0"
+    "svelte-awesome": "^2.2.0",
+    "twit": "^2.2.11"
   },
   "scripts": {
     "build": "rollup -c",
