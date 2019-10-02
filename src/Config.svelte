@@ -2,7 +2,9 @@
   import Icon from 'svelte-awesome'
   import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
-  let git = 'My Github Username'
+  import { git } from './stores.js'
+
+  let twitter = 'My Twitter Username'
 
   let repos = []
 
@@ -11,6 +13,9 @@
     const json = await response.json()
     const gitData = json.map(value => ({'name': value.name, 'url': value.html_url, 'date': new Date(value.updated_at)}) )
     repos = gitData.sort((a,b) => b.date - a.date).slice(0,3)
+  }
+
+  const getTweets = async function() {
   }
 
   let name = 'Name'
@@ -59,7 +64,11 @@
   </div>
 
   <div>
-    <input bind:value={git} on:change={getGitrepos}>
+    <input bind:value={$git} on:change={getGitrepos}>
+  </div>
+
+  <div>
+    <input bind:value={twitter} on:change={getTweets}>
   </div>
 
 </section>
